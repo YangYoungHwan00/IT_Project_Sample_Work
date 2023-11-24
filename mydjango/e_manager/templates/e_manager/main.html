@@ -4,22 +4,65 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href="static/style.css" rel="stylesheet">
+
+        <style>
+            
+        </style>
     </head>
     <body>
         <div>
             <a href="{% url 'e_manager' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             <h1><a href="{% url 'e_manager'%}">E Manager</a></h1>
-            <button class="btn btn-primary" type="button">I do</button>
+            <form method="post" action="{% url 'delete_row' %}">
+                {% csrf_token %}
+                <input type="submit" value="delete row">
+            </form>
+
+            <input type="submit" value="submit POST request" form="reg">
+
+            <div class="container">
+                <table id="et">
+                    <thread>
+                        <tr class="table-head">
+                            <th>EMPNO</th>
+                            <th>NAME</th>
+                            <th>BIRTHDAY</th>
+                            <th>DEPTNO</th>
+                            <th>EMP_TYEP</th>
+                            <th>TEL</th>
+                            <th>HOBBY</th>
+                            <th>PAY</th>
+                            <th>POSITION</th>
+                            <th>PEMPNO</th>
+                        </tr>
+                    </thread>
+
+                    <tbody>
+                    {% for e in empdata %}
+                        <tr>
+                            <td>{{ e.EMPNO }}</td>
+                            <td>{{ e.NAME }}</td>
+                            <td>{{ e.BIRTHDAY }}</td>
+                            <td>{{ e.DEPTNO }}</td>
+                            <td>{{ e.EMP_TYPE }}</td>
+                            <td>{{ e.TEL }}</td>
+                            <td>{{ e.HOBBY }}</td>
+                            <td>{{ e.PAY }}</td>
+                            <td>{{ e.POSITION }}</td>
+                            <td>{{ e.PEMPNO }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div> 
             
             <h1>Register employee</h1>
-            <form method="post" class="post-form" action="{% url 'register_form' %}">
-                {% csrf_token %}
-                {{form.as_p}}
-                <input type="submit" value="submit POST request">
+            <form id="reg" method="post" class="post-form" action="{% url 'register_form' %}">
+            {% csrf_token %}
+            {{form.as_p}}
+                
             </form>
-            <a href="{% url 'register_form' %}" class="btn btn-primary">
-                등록하기
-            </a>
         </div>
         <div class="content container">
             <div class="row">
