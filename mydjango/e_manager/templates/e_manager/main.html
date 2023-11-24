@@ -1,22 +1,25 @@
 {% load static %}
-        <title>Django Girls blog</title>
+    <head>
+        <title>E Manager</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        
     </head>
     <body>
         <div>
             <a href="{% url 'e_manager' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1><a href="{% url 'e_manager'}">Django Girls Blog</a></h1>
+            <h1><a href="{% url 'e_manager'%}">E Manager</a></h1>
             <button class="btn btn-primary" type="button">I do</button>
-
-            <h1>New post</h1>
-            <form method="post" class="post-form">
+            
+            <h1>Register employee</h1>
+            <form method="post" class="post-form" action="{% url 'register_form' %}">
                 {% csrf_token %}
                 {{form.as_p}}
+                <input type="submit" value="submit POST request">
             </form>
-            
+            <a href="{% url 'register_form' %}" class="btn btn-primary">
+                등록하기
+            </a>
         </div>
         <div class="content container">
             <div class="row">

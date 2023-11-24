@@ -1,0 +1,7 @@
+{% load static %}
+<body style="background-color: blue;">
+    <form method="post">
+        {% csrf_token %}
+        {{ data.as_p }}
+    </form>
+</body>
