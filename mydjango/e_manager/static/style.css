@@ -1,7 +1,10 @@
-container{
+.container {
     min-width:100%;
 }
 
+#et{
+    font-size:15px;
+}
 header{
 
 }
