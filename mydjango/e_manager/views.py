@@ -33,8 +33,10 @@ def delete_row(request):
 def update_data(request):
 	if request.method == 'POST':
 		qd = request.POST.get('np')
-		#item = emp.objects.get('EMPNO' == 1)
-		#item.delete()
+		qd = int(qd)
+		print(qd)
+		item = emp.objects.filter(EMPNO=qd)
+		item.delete()
 		return redirect('http://127.0.0.1:8000/')	
 	else:
 		return render(request, 'e_manager/test.html')
