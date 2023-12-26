@@ -6,9 +6,8 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin>
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link href="{% static 'css/style.css' %}" rel="stylesheet">
-        <script src="{% static 'javascript/main.js' %}"></script>
 
-        <style>
+                <style>
             .btn-container{
                 margin:15px;
             }
@@ -17,7 +16,7 @@
                 width:500px;
                 display: inline-block;
             }
-
+            
         </style>
     </head>
     <body>
@@ -61,12 +60,13 @@
                                     <th><div class="t_div">HOBBY</div></th>
                                     <th><div class="t_div">PAY</div></th>
                                     <th><div class="t_div">POSITION</div></th>
+                                    <th><div class="t_div">EDIT</div></th>
                                 </tr>
                             </thread>
 
                             <tbody>
                             {% for e in empdata %}
-                                <tr class="table-tuple">
+                                <tr class="table-tuple" name="capsule">
                                     <td><div class="capsule">{{ e.EMPNO }}</div></td>
                                     <td><div class="capsule">{{ e.NAME }}</div></td>
                                     <td><div class="capsule">{{ e.BIRTHDAY }}</div></td>
@@ -74,6 +74,7 @@
                                     <td><div class="capsule">{{ e.HOBBY }}</div></td>
                                     <td><div class="capsule">{{ e.PAY }}</div></td>
                                     <td><div class="capsule">{{ e.POSITION }}</div></td>
+                                    <td><div class="capsule">*</div></td>
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -84,4 +85,6 @@
             
         </div>
     </body>
+    <script type="text/javascript" src="{% static '/javascript/main.js' %}"></script>
+
 </html>

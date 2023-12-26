@@ -1,12 +1,23 @@
-function tuple_select(){
-    const $tuple = document.getElementsByClassName("table-tuple");
-    for(let i=0; i<$tuple.length; i++)
-    {
-        $tuple[i].onclick() = function(){
-            return function(){
-                this.style.backgroundColor="blue";
-            }
-        }
+
+console.log("wow");
+
+let selectedTd;
+
+document.getElementById("et").onclick = function(event) {
+    let target = event.target;
+
+    if(target.tagName != 'TD' && target.tagName != 'TR' && target.tagName != "DIV") return;
+
+    console.log(event.target);
+};
+
+function highlight(td) {
+    if(selectedTd) {
+        selectedTd.classList.remove('highlight');
     }
-    //$tuple[2].style.backgroundColor = "black";
+    selectedTd = td;
+    selectedTd.classList.add('highlight');
 }
+    //$tuple[2].style.backgroundColor = "black";
+
+
