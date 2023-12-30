@@ -3,6 +3,9 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 from .forms import empForm
 from .models import emp
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
 
 def e_manager(request):
 	form = empForm()
@@ -40,3 +43,8 @@ def update_data(request):
 		return redirect('http://127.0.0.1:8000/')	
 	else:
 		return render(request, 'e_manager/test.html')
+
+@api_view(['GET'])
+def hello_rest_api(requeset):
+	data = {'message': 'Hello, REST API!'}
+	return Response(data)

@@ -8,7 +8,7 @@ document.getElementById("et").onclick = function(event) {
 
     if(target.tagName != 'TD' && target.tagName != 'TR' && target.tagName != "DIV") return;
 
-    console.log(event.target);
+    console.log(target);
 };
 
 function highlight(td) {
