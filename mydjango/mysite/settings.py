@@ -56,6 +56,10 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
+CORS_ORIGIN_WHITELIST = [
+    'localhost:3000/'
+]
+
 ROOT_URLCONF = "mysite.urls"
 
 TEMPLATES = [
