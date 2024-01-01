@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './Style/Home.css';
 
+
+
 function Home(){
+
     return(
       <div id='Home'>
         <nav>

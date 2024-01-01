@@ -5,6 +5,8 @@ from .forms import empForm
 from .models import emp
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from .serializers import EmpSerializer
+from rest_framework import generics
 
 
 def e_manager(request):
@@ -44,7 +46,15 @@ def update_data(request):
 	else:
 		return render(request, 'e_manager/test.html')
 
-@api_view(['GET'])
-def hello_rest_api(requeset):
-	data = {'message': 'Hello, REST API!'}
-	return Response(data)
+# @api_view(['GET'])
+# def hello_rest_api(requeset):
+# 	data = {'message': 'Hello, REST API!'}
+# 	return Response(data)
+
+class EmpList(generics.ListCreateAPIView):
+	queryset = emp.objects.all()
+	serializer_class = EmpSerializer
+
+class EmpDetail(generics.RetrieveUpdateDestroyAPIView):
+	queryset = emp.objects.all()
+	serializer_class = EmpSerializer
