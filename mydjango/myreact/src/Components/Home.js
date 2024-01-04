@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, {useState, useEffect} from 'react';
 import './Style/Home.css';
-import CSRFToken from './CsrfToken';
+
 
 
 function Home(){
@@ -43,16 +43,6 @@ function Home(){
         PAY,
         POSITION,
         PEMPNO,
-        // EMPNO : 'text',
-        // NAME : 'text',
-        // BIRTHDAY : 'text',
-        // DEPTNO : 'text',
-        // EMP_TYPE : 'text',
-        // TEL : 'text',
-        // HOBBY : 'text',
-        // PAY : 'text',
-        // POSITION : 'text',
-        // PEMPNO : 'text',
       }),
     })
   }
@@ -60,7 +50,6 @@ function Home(){
   array = emp;
     return(
       <div id='Home'>
-        <CSRFToken />
         <nav>
           <Link to='/Another'>main</Link><br/>
         </nav>
@@ -72,9 +61,8 @@ function Home(){
         ))}
         <label style={{ color : 'red' }}>{array&&array[3].id}</label>
         
-        <form onSubmit={onSubmitHandler}>
-        
-          <div id='e_info_container'>
+        <form id='e_info_input_form' onSubmit={onSubmitHandler}>
+          <div id='e_info_input_container'>
             <div id='e_info_input_label_container'>
               <label className='e_info_input_label'>E_NO</label><br />
               <label className='e_info_input_label'>NAME</label><br />
@@ -102,6 +90,9 @@ function Home(){
             <input type='submit' value='go' /><br/>
           </div>
         </form>
+        <div style={{display : 'inline-block'}}>
+          good
+        </div>
       </div>
     );
   }
