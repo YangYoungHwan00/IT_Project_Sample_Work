@@ -6,8 +6,7 @@
 
 #e_info_container{
     width:500px;
-    margin:0;
-    
+    margin:10px;
 }
 
 #e_info_input_label_container{
@@ -15,9 +14,8 @@
 }
 
 .e_info_input_label{
-    margin:5px;
-    padding:0;
     height:30px;
+    margin:5px;
 }
 
 #e_info_input_container{
@@ -26,12 +24,37 @@
 
 .e_info_input{
     margin:5px;
-    padding:0;
+    
     height:30px;
 }
 
 #e_info_input_form{
     width:500px;
-    background-color: red;
+    background-color: pink;
     display:inline-block;
+    margin:30px;
+}
+
+.table_head{
+    background-color: rgb(255, 209, 209);
+}
+
+.t_div{
+    text-align: center;
+}
+
+.table_tuple:hover{
+    background-color: rgba(172, 255, 47, 0.528);
+}
+
+.user_info_capsule{
+    text-align: center;
+    width:100%;
+    height:100%;
+    line-height:50px;
+}
+
+#e_table_container{
+    margin:30px;
+    background-color: rgba(242, 197, 255, 0.673);
 }

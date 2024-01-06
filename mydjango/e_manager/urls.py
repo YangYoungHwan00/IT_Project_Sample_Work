@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
@@ -7,8 +7,8 @@ urlpatterns = [
     path('delete', views.delete_row, name='delete_row'),
 	path('update', views.update_data, name='update_data'),
     path('api', views.EmpList.as_view()),
-    path('api?id=<int:pk>/', views.EmpDetail.as_view()),
-    path('test', views.register_form),
+    path('api/id=<int:pk>', views.EmpDetail.as_view()),
+    #path('test', views.register_form),
 	# path('api/hello/', views.hello_rest_api, name='hello_rest_api'),
 	
 ]

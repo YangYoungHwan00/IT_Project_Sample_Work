@@ -3,18 +3,5 @@ from .models import emp
 
 class EmpSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = (
-            'id',
-            'EMPNO',
-            'NAME',
-            'BIRTHDAY',
-            'DEPTNO',
-            'EMP_TYPE',
-            'TEL',
-            'HOBBY',
-            'PAY',
-            'POSITION',
-            'PEMPNO'
-        )
-
+        fields = '__all__'
         model = emp

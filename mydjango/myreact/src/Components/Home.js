@@ -7,6 +7,15 @@ import './Style/Home.css';
 function Home(){
   const [emp,setEmp] = useState(null);
   let array = [];
+  const style = {
+    color : 'red',
+    display: 'block'
+  }
+
+  function clearAllInputs(e){
+    var allInputs = document.querySelectorAll('input');
+    allInputs.forEach(singleInput => singleInput.value = '');
+  }
 
   useEffect(() => {
     fetch('http://127.0.0.1:8000/api')
@@ -45,6 +54,7 @@ function Home(){
         PEMPNO,
       }),
     })
+    clearAllInputs();
   }
 
   array = emp;
@@ -53,16 +63,17 @@ function Home(){
         <nav>
           <Link to='/Another'>main</Link><br/>
         </nav>
+        <input type='button' value='delete row' />
 
         <h1><p>E Manager</p></h1>
         
         { emp&&emp.map((d,index) => (
-          <div key={d.id}>{d.id}</div>
+            <div key={d.id}>{d.id}</div>
         ))}
-        <label style={{ color : 'red' }}>{array&&array[3].id}</label>
+        <label style={style}>{array&&array[2].id}</label>
         
         <form id='e_info_input_form' onSubmit={onSubmitHandler}>
-          <div id='e_info_input_container'>
+          <div id='e_info_container'>
             <div id='e_info_input_label_container'>
               <label className='e_info_input_label'>E_NO</label><br />
               <label className='e_info_input_label'>NAME</label><br />
@@ -90,8 +101,36 @@ function Home(){
             <input type='submit' value='go' /><br/>
           </div>
         </form>
-        <div style={{display : 'inline-block'}}>
-          good
+        <div id='e_table_container' style={{display : 'inline-block'}}>
+          <table id='e_info_table'>
+            <thead>
+              <tr className='table_head'>
+                <th><div className="t_div">E_NO</div></th>
+                <th><div className="t_div">NAME</div></th>
+                <th><div className="t_div">BIRTHDAY</div></th>
+                <th><div className="t_div">DEPTNO</div></th>
+                <th><div className="t_div">HOBBY</div></th>
+                <th><div className="t_div">PAY</div></th>
+                <th><div className="t_div">POSITION</div></th>
+                <th><div className="t_div">EDIT</div></th>
+              </tr>
+            </thead>
+            <tbody>
+              { emp&&emp.map((data, index) => (
+                  <tr className='table_tuple'>
+                    <td><div className="user_info_capsule">{data.EMPNO}</div></td>
+                    <td><div className="user_info_capsule">{data.ENAME}</div></td>
+                    <td><div className="user_info_capsule">{data.BIRTHDAY}</div></td>
+                    <td><div className="user_info_capsule">{data.DEPTNO}</div></td>
+                    <td><div className="user_info_capsule">{data.HOBBY}</div></td>
+                    <td><div className="user_info_capsule">{data.PAY}</div></td>
+                    <td><div className="user_info_capsule">{data.POSITION}</div></td>
+                    <td><div className="user_info_capsule">*</div></td>
+                  </tr>
+              ))}          
+            </tbody>
+                            
+          </table>
         </div>
       </div>
     );

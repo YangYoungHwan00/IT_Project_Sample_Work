@@ -8,6 +8,8 @@ from rest_framework.response import Response
 from .serializers import EmpSerializer
 from rest_framework import generics
 from rest_framework.views import APIView
+from rest_framework import viewsets
+
 
 
 def e_manager(request):
@@ -56,9 +58,11 @@ class EmpList(generics.ListCreateAPIView):
 	queryset = emp.objects.all()
 	serializer_class = EmpSerializer
 
+class EmpDetail(generics.RetrieveUpdateDestroyAPIView):
+	queryset = emp.objects
+	#lookup_field = 'EMPNO'
+	serializer_class = EmpSerializer
+
 	
 
-class EmpDetail(generics.RetrieveUpdateDestroyAPIView):
-	queryset = emp.objects.all()
-	serializer_class = EmpSerializer
 
