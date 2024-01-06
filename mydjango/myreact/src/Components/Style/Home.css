@@ -4,9 +4,15 @@
     height:100%;
 }
 
+
+
 #e_info_container{
-    width:500px;
+    width:350px;
     margin:10px;
+}
+
+#e_info_table{
+    width:1040px;
 }
 
 #e_info_input_label_container{
@@ -29,7 +35,7 @@
 }
 
 #e_info_input_form{
-    width:500px;
+    width:350px;
     background-color: pink;
     display:inline-block;
     margin:30px;
@@ -37,10 +43,13 @@
 
 .table_head{
     background-color: rgb(255, 209, 209);
+    text-align: center;
 }
 
 .t_div{
     text-align: center;
+    width:100%;
+    margin:12px;
 }
 
 .table_tuple:hover{
@@ -52,9 +61,22 @@
     width:100%;
     height:100%;
     line-height:50px;
+    margin:12px;
 }
 
 #e_table_container{
-    margin:30px;
+    margin:10px;
     background-color: rgba(242, 197, 255, 0.673);
+    display: inline-block;
+    width:1040px;
+}
+
+.t_head{
+    padding: 0;
+    margin: 0;
+}
+
+.feather{
+    margin-right:20px;
+    margin-left:20px;
 }
