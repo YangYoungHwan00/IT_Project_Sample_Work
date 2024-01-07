@@ -66,10 +66,6 @@ function Home(){
     })
   }
 
-  function updateBtnHandler(){
-    var put_btn = document.getElementById();
-  }
-
   function menuModal(){ 
     var $modal = document.getElementById('modal_container');
     const str = $modal.classList;
@@ -84,16 +80,18 @@ function Home(){
   array = emp;
     return(
       <div id='Home'>
-        <div id='modal_container' class='modal_container'> 
-          <div>
-            holy shit
+        <div id='modal_container' class='modal_container d_none'> 
+          <div id='menu'>
+            <nav>
+              <Link to='/register'>e register</Link>
+            </nav>
           </div> 
         </div>
         <nav>
-          <Link to='/Another'>main</Link><br/>
+          <Link to='/another'>main</Link><br/>
         </nav>
         
-        <button onClick={menuModal}>menu</button><br />
+        <button id='menu_btn' onClick={menuModal}>menu</button><br />
         <input id='del_btn' type='input'></input>
         <input type='button' value='delete row' onClick={delBtnHandler}/><br />
         <input id='put_btn' type='input' />
