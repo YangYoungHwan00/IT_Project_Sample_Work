@@ -14,7 +14,7 @@ from rest_framework import viewsets
 
 def e_manager(request):
 	form = empForm()
-	empdata = emp.objects.all()
+	empdata = emp.objects.all().order_by('id')
 	context = {'form' : form,
 			'empdata' : empdata }
 	return render(request, 'e_manager/main.html',context)
@@ -55,7 +55,7 @@ def update_data(request):
 # 	return Response(data)
 
 class EmpList(generics.ListCreateAPIView):
-	queryset = emp.objects.all()
+	queryset = emp.objects.all().order_by('id')
 	serializer_class = EmpSerializer
 
 class EmpDetail(generics.RetrieveUpdateDestroyAPIView):
