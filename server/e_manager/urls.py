@@ -10,5 +10,4 @@ urlpatterns = [
     path('api/id=<int:pk>', views.EmpDetail.as_view()),
     #path('test', views.register_form),
 	# path('api/hello/', views.hello_rest_api, name='hello_rest_api'),
-	
 ]

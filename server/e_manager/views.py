@@ -1,15 +1,10 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.http import HttpResponse
 from .forms import empForm
 from .models import emp
 from rest_framework.decorators import api_view
-from rest_framework.response import Response
 from .serializers import EmpSerializer
 from rest_framework import generics
-from rest_framework.views import APIView
-from rest_framework import viewsets
-
 
 
 def e_manager(request):

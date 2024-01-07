@@ -11,11 +11,6 @@ function Home(){
     display: 'block'
   }
 
-  function clearAllInputs(e){
-    var allInputs = document.querySelectorAll('.e_info_input');
-    allInputs.forEach(singleInput => singleInput.value = '');
-  }  
-
   useEffect(() => {
     fetch('http://127.0.0.1:8000/api')
       .then((response) => response.json())
@@ -43,6 +38,11 @@ function Home(){
     }
   }
 
+  function empEdit(e){
+    var target = e.target.parentElement;
+    console.log(target);
+  }
+
   array = emp;
     return(
       <div id='Home'>
@@ -60,8 +60,6 @@ function Home(){
         <button id='menu_btn' onClick={menuModal}>menu</button><br />
         <input id='del_btn' type='input'></input>
         <input type='button' value='delete row' onClick={delBtnHandler}/><br />
-        <input id='put_btn' type='input' />
-        <input type='button' value='update'></input>
         <h1><p>E Manager</p></h1>
         
         { emp&&emp.map((d,index) => (
@@ -87,17 +85,17 @@ function Home(){
             <tbody>
               { emp&&emp.map((data) => (
                   <tr className='table_tuple'>
-                    <td><div className="user_info_capsule">{data.EMPNO}</div></td>
-                    <td><div className="user_info_capsule">{data.NAME}</div></td>
-                    <td><div className="user_info_capsule">{data.BIRTHDAY}</div></td>
-                    <td><div className="user_info_capsule">{data.DEPTNO}</div></td>
-                    <td><div className="user_info_capsule">{data.HOBBY}</div></td>
-                    <td><div className="user_info_capsule">{data.PAY}</div></td>
-                    <td><div className="user_info_capsule">{data.POSITION}</div></td>
-                    <td><div className="user_info_capsule"><div class='edit_btn_wrapper'><button class='edit_btn'><svg class="feather feather-edit" fill="none" height="24" stroke="currentColor" 
-                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-                      </svg></button></div></div></td>
+                    <td><input className="user_info_capsule" defaultValue = {data.EMPNO} /></td>
+                    <td><input className="user_info_capsule" defaultValue = {data.NAME} /></td>
+                    <td><input className="user_info_capsule" defaultValue = {data.BIRTHDAY} /></td>
+                    <td><input className="user_info_capsule" defaultValue = {data.DEPTNO} /></td>
+                    <td><input className="user_info_capsule" defaultValue = {data.HOBBY} /></td>
+                    <td><input className="user_info_capsule" defaultValue = {data.PAY} /></td>
+                    <td><input className="user_info_capsule" defaultValue = {data.POSITION} /></td>
+                    <td><div className="user_info_capsule"><div class='edit_btn_wrapper'><button class='edit_btn' onClick={empEdit}><svg class="feather feather-edit" 
+                    fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                    xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                    </svg></button></div></div></td>
                   </tr>
               ))}          
             </tbody>
