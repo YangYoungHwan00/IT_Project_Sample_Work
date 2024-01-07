@@ -4,7 +4,22 @@
     height:100%;
 }
 
+p{
+    animation-duration: 3s;
+    animation-name: slidein;
+}
 
+@keyframes slidein {
+    from{
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to{
+        margin-left: 0%;
+        width: 100%;
+    }
+}
 
 #e_info_container{
     width:350px;
@@ -77,6 +92,30 @@
 }
 
 .feather{
-    margin-right:20px;
-    margin-left:20px;
+    margin-left:24px;
+    margin-right:24px;
+}
+
+.feather:hover{
+    color : blue;
+}
+
+.edit_btn{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.d_block{
+    display: block;
+}
+
+.d_none{
+    display: none;
+}
+
+.modal_container{
+    background-color: red;
+    width:10px;
+    height: 10px;
 }

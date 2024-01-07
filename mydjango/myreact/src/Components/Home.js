@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react';
 import './Style/Home.css';
 
 
-
 function Home(){
   const [emp,setEmp] = useState(null);
   let array = [];
@@ -15,7 +14,7 @@ function Home(){
   function clearAllInputs(e){
     var allInputs = document.querySelectorAll('.e_info_input');
     allInputs.forEach(singleInput => singleInput.value = '');
-  }
+  }  
 
   useEffect(() => {
     fetch('http://127.0.0.1:8000/api')
@@ -25,6 +24,7 @@ function Home(){
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    var inputs = document.querySelectorAll('.e_info_input');
     const EMPNO = e.target.EMPNO.value;
     const NAME = e.target.NAME.value;
     const BIRTHDAY = e.target.BIRTHDAY.value;
@@ -57,24 +57,47 @@ function Home(){
     clearAllInputs();
   }
 
-  function delBtnHandler(e){
+  function delBtnHandler(){
     var del_btn = document.getElementById('del_btn');
     const e_id = del_btn.value;
     const api_url = 'http://127.0.0.1:8000/api/id=';
     fetch(api_url + e_id,{
       method: 'DELETE',
     })
-  } 
+  }
+
+  function updateBtnHandler(){
+    var put_btn = document.getElementById();
+  }
+
+  function menuModal(){ 
+    var $modal = document.getElementById('modal_container');
+    const str = $modal.classList;
+    if($modal.classList.contains('d_none')) {
+      $modal.classList.remove('d_none');
+    }
+    else{
+      $modal.classList.add('d_none');
+    }
+  }
 
   array = emp;
     return(
       <div id='Home'>
+        <div id='modal_container' class='modal_container'> 
+          <div>
+            holy shit
+          </div> 
+        </div>
         <nav>
           <Link to='/Another'>main</Link><br/>
         </nav>
+        
+        <button onClick={menuModal}>menu</button><br />
         <input id='del_btn' type='input'></input>
-        <input type='button' value='delete row' onClick={delBtnHandler}/>
-
+        <input type='button' value='delete row' onClick={delBtnHandler}/><br />
+        <input id='put_btn' type='input' />
+        <input type='button' value='update'></input>
         <h1><p>E Manager</p></h1>
         
         { emp&&emp.map((d,index) => (
@@ -135,10 +158,10 @@ function Home(){
                     <td><div className="user_info_capsule">{data.HOBBY}</div></td>
                     <td><div className="user_info_capsule">{data.PAY}</div></td>
                     <td><div className="user_info_capsule">{data.POSITION}</div></td>
-                    <td><div className="user_info_capsule"><svg class="feather feather-edit" fill="none" height="24" stroke="currentColor" 
+                    <td><div className="user_info_capsule"><div class='edit_btn_wrapper'><button class='edit_btn'><svg class="feather feather-edit" fill="none" height="24" stroke="currentColor" 
                     stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-                      </svg></div></td>
+                      </svg></button></div></div></td>
                   </tr>
               ))}          
             </tbody>
