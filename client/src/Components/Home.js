@@ -12,7 +12,7 @@ function Home(){
   }
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api')
+    fetch('http://127.0.0.1:8000/emp')
       .then((response) => response.json())
       .then((data) => setEmp(data));
   },[]);
@@ -20,7 +20,7 @@ function Home(){
   function delBtnHandler(){
     var del_btn = document.getElementById('del_btn');
     const e_id = del_btn.value;
-    const api_url = 'http://127.0.0.1:8000/api/id=';
+    const api_url = 'http://127.0.0.1:8000/emp/id=';
     fetch(api_url + e_id,{
       method: 'DELETE',
     })
@@ -38,7 +38,7 @@ function Home(){
   }
 
   function updateEmp(e){
-    const apiAddress = 'http://127.0.0.1:8000/api/id=';
+    const apiAddress = 'http://127.0.0.1:8000/emp/id=';
     const tr_id = e.target.id.slice(1);
     const EMPNO = document.getElementById('a'+tr_id).value;
     const NAME = document.getElementById('b'+tr_id).value;
