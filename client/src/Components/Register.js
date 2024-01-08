@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 function Register(){
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        var inputs = document.querySelectorAll('.e_info_input');
         const EMPNO = e.target.EMPNO.value;
         const NAME = e.target.NAME.value;
         const BIRTHDAY = e.target.BIRTHDAY.value;
@@ -18,7 +17,7 @@ function Register(){
         function clearAllInputs(e){
         var allInputs = document.querySelectorAll('.e_info_input');
         allInputs.forEach(singleInput => singleInput.value = '');
-    } 
+        } 
 
         fetch('http://127.0.0.1:8000/api', {
         method: 'POST',
