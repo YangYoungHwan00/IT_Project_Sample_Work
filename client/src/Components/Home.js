@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import React, {useState, useEffect} from 'react';
 import './Style/Home.css';
+import Filter from './Filter';
 
 
 function Home(){
   const [emp,setEmp] = useState(null);
-  let array = [];
   const style = {
     color : 'red',
     display: 'block'
@@ -102,7 +102,6 @@ function Home(){
     }
   }
 
-  array = emp;
     return(
       <div id='Home'>
         <div id='modal_container' className='modal_container d_none'> 
@@ -124,43 +123,10 @@ function Home(){
         { emp&&emp.map((d,index) => (
             <div key={d.id}>{d.id}</div>
         ))}
-        <label style={style}>{array&&array[2].id}</label>
+        <label style={style}>{emp&&emp[1].id}</label>
         
         
-        <div id='e_table_container'>
-          <table id='e_info_table'>
-            <thead>
-              <tr className='table_head'>
-                <th className='t_head'><div className="t_div">E_NO</div></th>
-                <th className='t_head'><div className="t_div">NAME</div></th>
-                <th className='t_head'><div className="t_div">BIRTHDAY</div></th>
-                <th className='t_head'><div className="t_div">DEPTNO</div></th>
-                <th className='t_head'><div className="t_div">HOBBY</div></th>
-                <th className='t_head'><div className="t_div">PAY</div></th>
-                <th className='t_head'><div className="t_div">POSITION</div></th>
-                <th className='t_head'><div className="t_div">EDIT</div></th>
-              </tr>
-            </thead>
-            <tbody>
-              { emp&&emp.map((data) => (
-                  <tr className='table_tuple' id={'r' + data.id}>
-                    <td><input className="user_info_capsule" readOnly id={'a' + data.id} defaultValue = {data.EMPNO} /></td>
-                    <td><input className="user_info_capsule" readOnly id={'b' + data.id} defaultValue = {data.NAME} /></td>
-                    <td><input className="user_info_capsule" readOnly id={'c' + data.id} defaultValue = {data.BIRTHDAY} /></td>
-                    <td><input className="user_info_capsule" readOnly id={'d' + data.id} defaultValue = {data.DEPTNO} /></td>
-                    <td><input className="user_info_capsule" readOnly id={'e' + data.id} defaultValue = {data.HOBBY} /></td>
-                    <td><input className="user_info_capsule" readOnly id={'f' + data.id} defaultValue = {data.PAY} /></td>
-                    <td><input className="user_info_capsule" readOnly id={'g' + data.id} defaultValue = {data.POSITION} /></td>
-                    <td><div className="user_info_capsule"><button className='edit_btn btn_status_red' id= {'k' + data.id} onClick={empEdit}>
-                      <svg className="feather feather-edit" fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24"
-                    xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-                    </svg></button></div></td>
-                  </tr>
-              ))}          
-            </tbody>
-                            
-          </table>
-        </div>
+        <Filter />
       </div>
     );
   }
