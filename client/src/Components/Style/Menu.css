@@ -1,0 +1,24 @@
+.modal_container{
+    
+    z-index: 2;
+    position: absolute;
+}
+
+#menu_btn{
+    z-index: 3;
+    position: absolute;
+}
+
+#menu{
+    width:300px;
+    height: 300px;
+    z-index: 2;
+    background-color: burlywood;
+    margin-top: 48px;
+    position:relative;
+}
+
+#link{
+    position:absolute;
+    margin:100px;
+}

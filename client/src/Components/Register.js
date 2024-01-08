@@ -14,7 +14,7 @@ function Register(){
         const POSITION = e.target.POSITION.value;
         const PEMPNO = e.target.PEMPNO.value;
 
-        function clearAllInputs(e){
+        function clearAllInputs(){
         var allInputs = document.querySelectorAll('.e_info_input');
         allInputs.forEach(singleInput => singleInput.value = '');
         } 

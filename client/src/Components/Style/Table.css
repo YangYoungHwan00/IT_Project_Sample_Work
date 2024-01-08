@@ -1,0 +1,115 @@
+#e_table_container{
+    overflow: auto;
+    height:600px;
+}
+
+.t_head{
+    position: sticky;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.t_div{
+    position: sticky;
+    top:0;
+    text-align: center;
+    width:100%;
+    margin:12px;
+}
+
+.table_head{
+    position: sticky;
+    top:0;
+    background-color: rgb(255, 209, 209);
+    text-align: center;
+}
+
+#e_info_container{
+    width:350px;
+    margin:10px;
+}
+
+#e_info_table{
+    width:1040px;
+}
+
+#e_info_input_label_container{
+    display: inline-block;
+}
+
+.e_info_input_label{
+    height:30px;
+    margin:5px;
+}
+
+#e_info_input_container{
+    display: inline-block;
+}
+
+.e_info_input{
+    margin:5px;
+    
+    height:30px;
+}
+
+#e_info_input_form{
+    width:350px;
+    background-color: pink;
+    display:inline-block;
+    margin:30px;
+}
+
+.table_tuple:hover{
+    background-color: rgba(172, 255, 47, 0.528);
+}
+
+.user_info_capsule{
+    text-align: center;
+    width:100%;
+    height:100%;
+    line-height:50px;
+    margin:12px;
+    border: none;
+    background-color: transparent;
+}
+
+.user_info_capsule_edit{
+    text-align: center;
+    width:100%;
+    height:100%;
+    line-height:50px;
+    margin:12px;
+    pointer-events: none;
+}
+
+#e_table_container{
+    margin:10px;
+    background-color: rgba(242, 197, 255, 0.673);
+    display: inline-block;
+    width:1040px;
+}
+
+.feather{
+    /* margin-left:24px;
+    margin-right:24px; */
+    margin:0;
+    pointer-events: none;
+}
+
+.feather:hover{
+    color : blue;
+}
+
+.edit_btn{
+    padding: 0;
+    width:55px;
+}
+
+.btn_status_green{
+    background-color: green;
+}
+
+.btn_status_red{
+    background-color: red;
+}
