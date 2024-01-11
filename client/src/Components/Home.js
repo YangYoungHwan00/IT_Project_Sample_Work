@@ -45,6 +45,7 @@ function Home(){
         <h1><p>E Manager</p></h1>
         <Filter />
         <Table />
+        
       </div>
     );
   }

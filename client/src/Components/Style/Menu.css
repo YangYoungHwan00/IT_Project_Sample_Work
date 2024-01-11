@@ -1,5 +1,4 @@
 .modal_container{
-    
     z-index: 2;
     position: absolute;
 }
@@ -10,15 +9,37 @@
 }
 
 #menu{
-    width:300px;
+    width:70px;
     height: 300px;
     z-index: 2;
-    background-color: burlywood;
+    background-color: white;
     margin-top: 48px;
     position:relative;
+    transition:0.5s;
+    overflow: hidden;
+    position: absolute;
+    /* animation-duration: 1s;
+    animation-name: slidemenu; */
 }
 
-#link{
+#menu:hover{
+    width:300px;
+}
+
+#links{
     position:absolute;
-    margin:100px;
+}
+
+#link_span{
+    background-color: black;
+   
+    display: flex;
+  
+}
+
+.icon_content{
+    position: absolute;
+    color:black;
+    font-size: 20px;
+    margin-top: 10px;
 }

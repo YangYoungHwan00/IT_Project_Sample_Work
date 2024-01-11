@@ -1,5 +1,6 @@
 import './Style/Menu.css';
 import { Link } from 'react-router-dom';
+import { PersonAddOutline } from 'react-ionicons'
 
 function Menu(){
 
@@ -16,14 +17,22 @@ function Menu(){
 
     return(
         <div>
-            <div id='modal_container' className='modal_container d_none'> 
-          <div id='menu'>
-            <nav id='link'>
-              <Link to='/register'>e register</Link>
-            </nav>
-          </div> 
-        </div>
-        <button id='menu_btn' onClick={menuModal}>menu</button><br />
+          <div id='modal_container' className='modal_container'> 
+            <div id='menu'>
+              <nav id='links'>
+                <Link to='/register' id='link'>
+                  <span><PersonAddOutline
+                    color={'black'} 
+                    height="50px"
+                    width="70px"
+                  />
+                  <span className='icon_content'>goodddddfdfdffdfdf</span>
+                  </span></Link>
+              </nav>
+            </div>
+          </div>
+          <button id='menu_btn' onClick={menuModal}>menu</button><br />
+          
         </div>
     );
 }
