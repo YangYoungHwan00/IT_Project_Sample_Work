@@ -1,7 +1,8 @@
 #e_table_container{
     overflow: auto;
     height: 600px;
-    box-shadow: 0px 0px 14px 2px gray;
+    box-shadow: 0px 3px 14px 2px gray;
+    border-radius: 15px;
 }
 
 .t_head{
@@ -22,8 +23,9 @@
 .table_head{
     position: sticky;
     top:0;
-    background-color: rgb(255, 212, 111);
+    background-color: white;
     text-align: center;
+    box-shadow: 0px 1px 8px 1px gray;
 }
 
 #e_info_container{
@@ -33,6 +35,8 @@
 
 #e_info_table{
     width:1040px;
+    background-color: rgb(82, 185, 167);
+    border-radius: 15px;
 }
 
 #e_info_input_label_container{
@@ -61,7 +65,7 @@
 }
 
 .table_tuple:hover{
-    background-color: rgba(164, 241, 255, 0.528);
+    background-color: rgba(191, 201, 195, 0.754);
 }
 
 .user_info_capsule{
@@ -72,6 +76,7 @@
     margin:12px;
     border: none;
     background-color: transparent;
+    color:white;
 }
 
 .user_info_capsule_edit{
@@ -112,11 +117,11 @@
 }
 
 .btn_status_green{
-    background-color: rgba(155, 222, 119, 0.702);
+    background-color: rgba(255, 86, 86, 0.864);
 }
 
 .btn_status_red{
-    background-color: rgba(255, 212, 111, 0.854);
+    background-color: rgba(255, 255, 255, 0.942);
 }
 
 ::-webkit-scrollbar{

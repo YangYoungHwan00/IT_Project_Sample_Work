@@ -18,12 +18,10 @@ function Home(){
 
     return(
       <div id='Home'>
-        
-        <nav>
-          <Link to='/another'>main</Link><br/>
-        </nav>
+        <div className='header'>
+          <p className='title'>E Manager</p>
+        </div>
         <Menu />
-        <span><h1><p id='title'>E Manager</p></h1></span>
         <div id='table_component_container'>
           <Table />
         </div>

@@ -41,6 +41,9 @@ function Register(){
     }
     return(
         <div>
+            <div className='header'>
+                <p className='title'>E Manager</p>
+            </div>
             <nav>
                 <Link to='/'>back</Link>
             </nav>

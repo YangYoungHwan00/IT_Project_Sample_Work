@@ -23,7 +23,7 @@ function Menu(){
               <nav id='links'>
                 <Link to='/register' id='link'>
                   <span><PersonAddOutline
-                    color={'rgb(255, 212, 111)'}
+                    color={'rgb(82, 185, 167)'}
                     height="50px"
                     width="70px"
                   />
