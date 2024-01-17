@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Style/Filter.css'
 
 function Filter(){
-
-
+    
     return(
         <div id='Filter'>
             <select>

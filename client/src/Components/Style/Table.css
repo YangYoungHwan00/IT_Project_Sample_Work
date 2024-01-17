@@ -1,6 +1,7 @@
 #e_table_container{
     overflow: auto;
-    height:600px;
+    height: 600px;
+    box-shadow: 0px 0px 14px 2px gray;
 }
 
 .t_head{
@@ -21,7 +22,7 @@
 .table_head{
     position: sticky;
     top:0;
-    background-color: rgb(255, 209, 209);
+    background-color: rgb(255, 212, 111);
     text-align: center;
 }
 
@@ -49,19 +50,18 @@
 
 .e_info_input{
     margin:5px;
-    
     height:30px;
 }
 
 #e_info_input_form{
     width:350px;
-    background-color: pink;
+    background-color: rgb(255, 253, 192);
     display:inline-block;
     margin:30px;
 }
 
 .table_tuple:hover{
-    background-color: rgba(172, 255, 47, 0.528);
+    background-color: rgba(164, 241, 255, 0.528);
 }
 
 .user_info_capsule{
@@ -85,7 +85,7 @@
 
 #e_table_container{
     margin:10px;
-    background-color: rgba(242, 197, 255, 0.673);
+    background-color: rgb(255, 254, 250);
     display: inline-block;
     width:1040px;
 }
@@ -104,12 +104,21 @@
 .edit_btn{
     padding: 0;
     width:55px;
+    border: none;
+    border-radius: 5px;
+    margin:10px;
+    box-shadow: 0px 0px 5px 1px rgba(128, 128, 128, 0.73);
+    transition:0.3s;
 }
 
 .btn_status_green{
-    background-color: green;
+    background-color: rgba(155, 222, 119, 0.702);
 }
 
 .btn_status_red{
-    background-color: red;
+    background-color: rgba(255, 212, 111, 0.854);
+}
+
+::-webkit-scrollbar{
+    display: none;
 }

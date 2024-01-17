@@ -5,6 +5,7 @@ from .models import emp
 from rest_framework.decorators import api_view
 from .serializers import EmpSerializer
 from rest_framework import generics
+from rest_framework import filters
 
 
 def e_manager(request):
@@ -50,8 +51,12 @@ def update_data(request):
 # 	return Response(data)
 
 class EmpList(generics.ListCreateAPIView):
-	queryset = emp.objects.all().order_by('id')
+	def get_queryset(self):
+		return emp.objects.all().order_by('id')
+		
 	serializer_class = EmpSerializer
+	filter_backends = [filters.SearchFilter]
+	search_fields = ['DEPTNO']
 
 class EmpDetail(generics.RetrieveUpdateDestroyAPIView):
 	queryset = emp.objects
@@ -59,5 +64,7 @@ class EmpDetail(generics.RetrieveUpdateDestroyAPIView):
 	serializer_class = EmpSerializer
 
 	
+
+
 
 

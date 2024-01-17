@@ -19,16 +19,18 @@ function Menu(){
         <div>
           <div id='modal_container' className='modal_container'> 
             <div id='menu'>
+              <div id='menu_contents'>
               <nav id='links'>
                 <Link to='/register' id='link'>
                   <span><PersonAddOutline
-                    color={'black'} 
+                    color={'rgb(255, 212, 111)'}
                     height="50px"
                     width="70px"
                   />
-                  <span className='icon_content'>goodddddfdfdffdfdf</span>
+                    <span className='icon_content'>Register</span>
                   </span></Link>
               </nav>
+              </div>
             </div>
           </div>
           <button id='menu_btn' onClick={menuModal}>menu</button><br />

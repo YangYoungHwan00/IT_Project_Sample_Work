@@ -108,10 +108,8 @@ function Table(){
                     </svg></button></div></td>
                   </tr>
               ))}          
-            </tbody>
-                            
+            </tbody>          
           </table>
-
         </div>
     );
 }
