@@ -1,8 +1,12 @@
 #e_table_container{
     overflow: auto;
-    height: 600px;
+    height: 500px;
     box-shadow: 0px 3px 14px 2px gray;
     border-radius: 15px;
+    background-color: rgb(255, 254, 250);
+    display: inline-block;
+    width: 1040px;
+    position: relative;
 }
 
 .t_head{
@@ -10,6 +14,7 @@
     top: 0;
     padding: 0;
     margin: 0;
+    font-weight: 750;
 }
 
 .t_div{
@@ -34,22 +39,10 @@
 }
 
 #e_info_table{
-    width:1040px;
     background-color: rgb(82, 185, 167);
     border-radius: 15px;
-}
-
-#e_info_input_label_container{
-    display: inline-block;
-}
-
-.e_info_input_label{
-    height:30px;
-    margin:5px;
-}
-
-#e_info_input_container{
-    display: inline-block;
+    width: 100%;
+    position: absolute;
 }
 
 .e_info_input{
@@ -57,11 +50,8 @@
     height:30px;
 }
 
-#e_info_input_form{
-    width:350px;
-    background-color: rgb(255, 253, 192);
-    display:inline-block;
-    margin:30px;
+.table_tuple{
+    box-shadow: 0px 0px 2px 0px white;
 }
 
 .table_tuple:hover{
@@ -77,6 +67,7 @@
     border: none;
     background-color: transparent;
     color:white;
+    font-weight: 500;
 }
 
 .user_info_capsule_edit{
@@ -86,13 +77,6 @@
     line-height:50px;
     margin:12px;
     pointer-events: none;
-}
-
-#e_table_container{
-    margin:10px;
-    background-color: rgb(255, 254, 250);
-    display: inline-block;
-    width:1040px;
 }
 
 .feather{
@@ -126,4 +110,8 @@
 
 ::-webkit-scrollbar{
     display: none;
+}
+
+td{
+    width:80px;
 }

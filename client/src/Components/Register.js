@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import './Style/Register.css'
 
 function Register(){
     const onSubmitHandler = (e) => {
@@ -42,40 +43,39 @@ function Register(){
     return(
         <div>
             <div className='header'>
-                <p className='title'>E Manager</p>
+                <Link to='/'><p className='title'>E Manager</p></Link>
             </div>
-            <nav>
-                <Link to='/'>back</Link>
-            </nav>
-            <form id='e_info_input_form' name='e_info' onSubmit={onSubmitHandler}>
-                <div id='e_info_container'>
-                    <div id='e_info_input_label_container'>
-                        <label className='e_info_input_label'>E_NO</label><br />
-                        <label className='e_info_input_label'>NAME</label><br />
-                        <label className='e_info_input_label'>BIRTH</label><br />
-                        <label className='e_info_input_label'>D_NO</label><br />
-                        <label className='e_info_input_label'>TYPE</label><br />
-                        <label className='e_info_input_label'>TEL</label><br />
-                        <label className='e_info_input_label'>HOBBY</label><br />
-                        <label className='e_info_input_label'>PAY</label><br />
-                        <label className='e_info_input_label'>POSITION</label><br />
-                        <label className='e_info_input_label'>P_NO</label><br />
+            <div id='register_form_container'>
+                <form id='e_info_input_form' name='e_info' onSubmit={onSubmitHandler}>
+                    <div id='e_info_container'>
+                        <div id='e_info_input_label_container'>
+                            <label className='e_info_input_label'>E_NO</label><br />
+                            <label className='e_info_input_label'>NAME</label><br />
+                            <label className='e_info_input_label'>BIRTH</label><br />
+                            <label className='e_info_input_label'>D_NO</label><br />
+                            <label className='e_info_input_label'>TYPE</label><br />
+                            <label className='e_info_input_label'>TEL</label><br />
+                            <label className='e_info_input_label'>HOBBY</label><br />
+                            <label className='e_info_input_label'>PAY</label><br />
+                            <label className='e_info_input_label'>POSITION</label><br />
+                            <label className='e_info_input_label'>P_NO</label><br />
+                        </div>
+                        <div id='e_info_input_container'>
+                            <input className='e_info_input' type='text' name='EMPNO' /><br />
+                            <input className='e_info_input' type='text' name='NAME' /><br />
+                            <input className='e_info_input' type='date' name='BIRTHDAY' /><br />
+                            <input className='e_info_input' type='text' name='DEPTNO' /><br />
+                            <input className='e_info_input' type='text' name='EMP_TYPE' /><br />
+                            <input className='e_info_input' type='text' name='TEL' /><br />
+                            <input className='e_info_input' type='text' name='HOBBY' /><br />
+                            <input className='e_info_input' type='number' name='PAY' /><br />
+                            <input className='e_info_input' type='text' name='POSITION' /><br />
+                            <input className='e_info_input' type='number' name='PEMPNO' /><br />
+                        </div>
                     </div>
-                    <div id='e_info_input_container'>
-                        <input className='e_info_input' type='text' name='EMPNO' /><br />
-                        <input className='e_info_input' type='text' name='NAME' /><br />
-                        <input className='e_info_input' type='date' name='BIRTHDAY' /><br />
-                        <input className='e_info_input' type='text' name='DEPTNO' /><br />
-                        <input className='e_info_input' type='text' name='EMP_TYPE' /><br />
-                        <input className='e_info_input' type='text' name='TEL' /><br />
-                        <input className='e_info_input' type='text' name='HOBBY' /><br />
-                        <input className='e_info_input' type='number' name='PAY' /><br />
-                        <input className='e_info_input' type='text' name='POSITION' /><br />
-                        <input className='e_info_input' type='number' name='PEMPNO' /><br />
-                    </div>
-                    <input type='submit' value='go' /><br/>
-                </div>
-            </form>
+                </form><br />
+                <input className='register_btn' form='e_info_input_form' type='submit' value='add' /><br />
+            </div>
         </div>
     );
 }

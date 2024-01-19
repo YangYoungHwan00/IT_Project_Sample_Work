@@ -19,7 +19,7 @@ function Home(){
     return(
       <div id='Home'>
         <div className='header'>
-          <p className='title'>E Manager</p>
+          <Link to='/'><p className='title'>E Manager</p></Link>
         </div>
         <Menu />
         <div id='table_component_container'>
