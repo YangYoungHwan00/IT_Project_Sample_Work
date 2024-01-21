@@ -1,0 +1,92 @@
+E Manager Sample Code Manual
+コード内の{}は中のコードだけ書くこと
+
+１。プロゼクトのサンプルをダウンロードします。
+    $ git clone https://github.com/YangYoungHwan00/IT_Project_Sample_Work.git
+    上のコードをターミナルに入力（自分が保存したい directoryまで移動してからしてください）ex. $ cd 自分のdirectory
+
+
+２。VsCodeを設置します。
+    Vscodeの設置　Vscodeの Mac version 設置。
+
+
+３。django プロゼクトを始めます。
+    djangoのプロゼクトを始めたい directoryまで移動する。
+    $ django-admin startproject {プロゼクト名}
+    を実行する。上の命令が聞かなかった場合、下の命令を実行する。
+    $ python -m django startproject {プロゼクト名}
+
+
+４。django プロゼクトの確認します。
+    ターミナルでdjangoプロゼクトがあるdirectoryまで移動して
+    $ python manage.py runserver
+    を入力すると自分のbrowserにdjangoのプロゼクト開始のウィンドウが表示されることを確認
+
+
+５。djangoの初期migrationをします。
+    manage.pyがあるdirectoryまでターミナルから移動します。
+    $ python3 manage.py makemigrations
+    $ python3 manage.py migrate
+    上のコードを順番に実行します。
+
+
+６。postgresqlデータベースを設置します。
+    今回はhomebrewというツールを利用して設置します。いろいろなプログラム等を管理しやすいツールです。
+    https://brew.sh/
+    homebrewのサイトに移動して初ページにあるコードをコピーしてターミナルで実行します。
+    ＄ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    上のコードですが動かなかった場合直接ホムページでコピーして下さい。
+    $ brew install postgresql@16
+    $ brew services start postgresql@16
+    $ psql
+    ここまでしたらpostgresqlデータベースを使えるようになります。
+    psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: 
+    FATAL:  role "postgres" does not exist
+    もし上のようなエラーが出たら次の二つのコードを実行
+    $ psql -d template1
+    $ create database {付けたいdb名}
+
+
+７. postgresqlデータベースにサンプルデータを入れます。
+    サンプルデータを入れる新しいデータベースを生成
+    ex. $ create database sample
+    $ \connect sample
+
+
+８。djangoとpostgresqlを連動します。
+    IT_Project_Sample_Work/server/mysite/setting.py
+    上のファイルを開きます。
+    Databases　= {}　の中にある要素をセットします。
+    NAMEに自分が作ったデータベースの名前を入れます。 ex. 'NAME': 'sample',
+    USERに本人のpostgresqlのRole名前を書きます。（多分本人のMacのhomeフォルダーの名前）
+    PASSWORDにpostgresqlに設定したパースワードを書きます。（設定しなかったら空欄）
+
+
+８。Vscode内で　djangoを使えるようにセットします。
+    "python" extensionを設置する。extensionは左側のアイコン（四角形が四つあるアイコン）クッリクしてpythonを検索してダウンロードする。
+    ターミナルで下の四つのpython libraryを設置する。（pipが聞かない場合pip3でやってみること）
+    $ pip install djangorestframework
+    $ pip install django-filter
+    $ pip install django-cors-headers
+    $ pip install psycopg2
+
+
+９。Reactを使う準備をします。
+    $ npm install -g yarn
+    自分が覚えるところにyarn-globalという名前のフォルダを作る。
+    $ yarn config set prefix {yarn-globalフォルダーの経路}
+    $ yarn config get prefix　で上の経路が出たら成功。
+    $ yarn global add create-react-app
+    $ yarn global add react-scripts
+    
+
+１０。サンプルを作動します。
+    Vscodeに入ります。
+    file -> open folder　で IT_Project_Sample_Work　ファイルに入ります。
+    serverの manage.pyを実行します。（vscodeではなくターミナルで　runserverを利用しても大丈夫です。）
+    django サーバーの準備が終わりました。
+
+    IT_Project_Sample_Workに移動
+    clientフォルダーに移動。
+    $ yarn start
+    フロントエンドが実行されます。
