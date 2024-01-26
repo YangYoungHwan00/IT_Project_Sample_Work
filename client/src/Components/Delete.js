@@ -1,20 +1,26 @@
 import './Style/Delete.css'
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React from 'react';
 
 function Delete(){
     
     const api_url = 'http://127.0.0.1:8000/emp/id=';
 
     function DelBtnHandler(){
-        const selected = document.querySelectorAll('.btn_status_green')
-        for(var i=0; i<selected.length; i++){
-            fetch(api_url + selected[i].id.slice(1),{
-                method: 'DELETE',
-            });
+        let selected = null;
+        selected = document.querySelectorAll('.btn_status_green')
+        if(selected.length == 0)
+        {
+            window.alert('Click edit buttons first to delete');
         }
-        
-        window.location.reload();
+        else{
+            for(var i=0; i<selected.length; i++){
+                fetch(api_url + selected[i].id.slice(1),{
+                    method: 'DELETE',
+                });
+            }
+            console.log(selected);
+            window.location.reload();
+        }
     }
 
     return(

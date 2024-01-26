@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import React, {useState, useEffect, useRef} from 'react';
 import './Style/Home.css';
 import Table from './Table';
 import Menu from './Menu';
@@ -20,8 +19,7 @@ function Home(){
         <div id='del_btn_div'>
           <Delete />   
         </div> 
-        <Footer />
-        
+        <Footer />     
       </div>
     );
   }

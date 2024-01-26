@@ -1,6 +1,5 @@
 import './Style/Menu.css';
 import { Link } from 'react-router-dom';
-import { PersonAddOutline } from 'react-ionicons'
 
 function Menu(){
 
@@ -13,7 +12,7 @@ function Menu(){
         else{
           $modal.classList.add('d_none');
         }
-      }
+    }
 
     return(
         <div>
