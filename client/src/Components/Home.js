@@ -3,7 +3,6 @@ import './Style/Home.css';
 import Table from './Table';
 import Menu from './Menu';
 import Delete from './Delete'
-import Footer from './Footer';
 
 function Home(){ 
 
@@ -18,8 +17,7 @@ function Home(){
         </div>    
         <div id='del_btn_div'>
           <Delete />   
-        </div> 
-        <Footer />     
+        </div>    
       </div>
     );
   }
