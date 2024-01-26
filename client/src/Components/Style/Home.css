@@ -54,5 +54,5 @@
 #del_btn_div{
     display: inline-block;
     margin-top: 110px;
-    position: absolute;
+    position: fixed;
 }

@@ -7,18 +7,23 @@ function Delete(){
 
     async function DelBtnHandler(){
         let selected = null;
-        selected = document.querySelectorAll('.btn_status_green')
+        selected = document.querySelectorAll('.btn_status_red')
         if(selected.length == 0)
         {
             window.alert('Click edit buttons first to delete');
         }
         else{
-            for(var i=0; i<selected.length; i++){
-                await fetch(api_url + selected[i].id.slice(1),{
-                    method: 'DELETE',
-                });
+            const isSure = window.confirm('Do you really want to delete?');
+            
+            if(isSure)
+            {
+                for(var i=0; i<selected.length; i++){
+                    await fetch(api_url + selected[i].id.slice(1),{
+                        method: 'DELETE',
+                    });
+                }
             }
-            console.log(selected);
+            else return;
             window.location.reload();
         }
     }

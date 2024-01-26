@@ -98,11 +98,11 @@
     transition:0.3s;
 }
 
-.btn_status_green{
+.btn_status_red{
     background-color: rgba(255, 86, 86, 0.864);
 }
 
-.btn_status_red{
+.btn_status_white{
     background-color: rgba(255, 255, 255, 0.942);
 }
 
