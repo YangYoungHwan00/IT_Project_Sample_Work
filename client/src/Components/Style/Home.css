@@ -2,13 +2,12 @@
     background-color: rgb(240, 238, 234);
     width:100%;
     height:100%;
-    position: relative;
 }
 
 .header{
     background-color: rgb(82, 185, 167);
     position:relative;
-    width:85%;
+    width:1200px;
     height:80px;
     text-align: center;
     font-size: 40px;
@@ -38,7 +37,10 @@
     position:relative;
     text-align: center;
     margin-top:50px;
-    margin-left:50px;
+    margin-left:200px;
+    margin-right:60px;
+    width:1040px;
+    display: inline-block;
 }
 
 .title{
@@ -47,4 +49,10 @@
     transform: translate(60%,0%);
     color:white;
     min-width: 200px;
+}
+
+#del_btn_div{
+    display: inline-block;
+    margin-top: 110px;
+    position: absolute;
 }

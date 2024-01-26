@@ -1,20 +1,12 @@
 import { Link } from 'react-router-dom';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './Style/Home.css';
 import Table from './Table';
 import Menu from './Menu';
+import Delete from './Delete'
+import Footer from './Footer';
 
-
-function Home(){
-  
-  function delBtnHandler(){
-    var del_btn = document.getElementById('del_btn');
-    const e_id = del_btn.value;
-    const api_url = 'http://127.0.0.1:8000/emp/id=';
-    fetch(api_url + e_id,{
-      method: 'DELETE',
-    })
-  }
+function Home(){ 
 
     return(
       <div id='Home'>
@@ -24,9 +16,12 @@ function Home(){
         <Menu />
         <div id='table_component_container'>
           <Table />
-        </div>
-        <input id='del_btn' type='input'></input>
-        <input type='button' value='delete row' onClick={delBtnHandler} /><br />
+        </div>    
+        <div id='del_btn_div'>
+          <Delete />   
+        </div> 
+        <Footer />
+        
       </div>
     );
   }

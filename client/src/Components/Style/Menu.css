@@ -43,22 +43,20 @@
     margin-top: 20px;
 }
 
-#link_span{
-    background-color: black;
-   
-    display: flex;
-  
-}
-
 .icon_content{
     position: absolute;
     color:black;
     font-size: 20px;
-    margin: 10px;
+    margin: 20px;
     color:rgb(62, 147, 133);
 }
 
 #menu_contents{
-    margin-left: 7px;
+    margin-left: 10px;
+}
+
+#Outline{
+    margin-left:10px;
+    fill:rgb(82, 185, 167);
 }
 
