@@ -5,7 +5,7 @@ function Delete(){
     
     const api_url = 'http://127.0.0.1:8000/emp/id=';
 
-    function DelBtnHandler(){
+    async function DelBtnHandler(){
         let selected = null;
         selected = document.querySelectorAll('.btn_status_green')
         if(selected.length == 0)
@@ -14,7 +14,7 @@ function Delete(){
         }
         else{
             for(var i=0; i<selected.length; i++){
-                fetch(api_url + selected[i].id.slice(1),{
+                await fetch(api_url + selected[i].id.slice(1),{
                     method: 'DELETE',
                 });
             }
