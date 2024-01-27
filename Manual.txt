@@ -47,7 +47,7 @@ E Manager Sample Code Manual
     $ create database {付けたいdb名}
 
 
-７. postgresqlデータベースにサンプルデータを入れます。
+７。 postgresqlデータベースにサンプルデータを入れます。
     サンプルデータを入れる新しいデータベースを生成
     ex. $ create database sample
     $ \connect sample
@@ -62,7 +62,7 @@ E Manager Sample Code Manual
     PASSWORDにpostgresqlに設定したパースワードを書きます。（設定しなかったら空欄）
 
 
-８。Vscode内で　djangoを使えるようにセットします。
+９。Vscode内で　djangoを使えるようにセットします。
     "python" extensionを設置する。extensionは左側のアイコン（四角形が四つあるアイコン）クッリクしてpythonを検索してダウンロードする。
     ターミナルで下の四つのpython libraryを設置する。（pipが聞かない場合pip3でやってみること）
     $ pip install djangorestframework
@@ -71,7 +71,7 @@ E Manager Sample Code Manual
     $ pip install psycopg2
 
 
-９。Reactを使う準備をします。
+１０。Reactを使う準備をします。
     $ npm install -g yarn
     自分が覚えるところにyarn-globalという名前のフォルダを作る。
     $ yarn config set prefix {yarn-globalフォルダーの経路}
@@ -80,7 +80,7 @@ E Manager Sample Code Manual
     $ yarn global add react-scripts
     
 
-１０。サンプルを作動します。
+１１。サンプルを作動します。
     Vscodeに入ります。
     file -> open folder　で IT_Project_Sample_Work　ファイルに入ります。
     serverの manage.pyを実行します。（vscodeではなくターミナルで　runserverを利用しても大丈夫です。）
